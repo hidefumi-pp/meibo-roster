@@ -1,0 +1,37 @@
+
+    
+    
+        <h3>Member All</h3>
+    
+         
+          <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Tel</th>
+                    <th>Class</th>
+                </tr>
+            </thead>
+             <tbody>
+                <% @rosters.each do |roster| %>
+                <tr>
+                    <td><%= roster.id %></td>
+                    <td><%= roster.last %></td>
+                    <td><%= roster.first %></td>
+                    <td><a href="tel:<%= roster.tel %>"><%= roster.tel %></a> </td>
+                    <td><%=roster.category.name%>
+                     
+                         <div class="buttons">
+                            <a href="/rosters/<%= roster.id%>" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a> 
+                            <a href="/rosters/<%= roster.id%>/edit"><span class="glyphicon glyphicon-edit"></span></a>
+                         </div>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+          </table>
+   
+
+
