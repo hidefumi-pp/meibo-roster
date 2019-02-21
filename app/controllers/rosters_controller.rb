@@ -32,6 +32,7 @@ class RostersController < ApplicationController
 		roster.last = params["rosters"]["last"]
 		roster.first = params["rosters"]["first"]
 		roster.tel = params["rosters"]["tel"]
+		roster.category_id = params["rosters"]["category_id"]
 		roster.save
 		redirect_to "/"
 	end
